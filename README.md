@@ -55,9 +55,3 @@ The registry JSON stores paths to reference images. Keep those files available; 
 ```bash
 python predict.py --checkpoint checkpoints/updated.pth --registry checkpoints/updated_registry.json --image data/query.png
 ```
-
-## Scope and checkpoint compatibility
-
-This is a **paper-aligned reference implementation**, not a repackaging of the earlier experiment scripts. The earlier local checkpoint uses a ResNet-50 low-bit branch and a lightweight RGB condition encoder, whereas the current manuscript specifies four ResNet-18 encoders. That checkpoint is intentionally excluded and cannot be loaded into this implementation. The reported manuscript metrics must not be presented as measured with this release until the paper-aligned model has been trained and evaluated.
-
-This folder provides the core model, objectives, paired benign-degradation consistency training, adaptation, registry, and inference. Dataset-specific full-benchmark evaluation and visualization scripts remain outside this compact release. The CSV entry points make it possible to integrate those protocols without changing the architecture.
